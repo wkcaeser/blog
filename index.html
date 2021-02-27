@@ -103,13 +103,15 @@
 <li>5、绑定cdn加速</li>
 </ul>
 <blockquote>
-<p>前面两部暂时就不讲了，可以参考网上其他文章</p>
+<p>前面两步暂时就不讲了，可以参考网上其他文章</p>
 </blockquote>
 <h2 id="创建GitHub-pages-repository项目"><a href="#创建GitHub-pages-repository项目" class="headerlink" title="创建GitHub pages repository项目"></a>创建GitHub pages repository项目</h2><ul>
 <li>创建项目</li>
 </ul>
 <hr>
-<p><strong>首先选择GitHub页面右上角的加号，选择New repository。</strong></p>
+<strong> 
+首先选择GitHub页面右上角的加号，选择New repository。
+</strong>
 <br>
 
 <img src="https://cache.wkcaeser.com/uPic/VIPomK.png"/>
@@ -183,42 +185,12 @@
 <img src="https://cache.wkcaeser.com/uPic/rpZgkM.png"/>
 
 
-<h2 id="绑定cdn加速"><a href="#绑定cdn加速" class="headerlink" title="绑定cdn加速"></a>绑定cdn加速</h2><hr>
-<strong>
-上面博客服务是搭建OK了，但是你会发现，访问速度实在是感人，没办法，GitHub一般用的是aws，在国内的访问速度确实有点忍不了  
-<br>对此，我们可以通过国内的cdn服务对其进行加速
-<br>PS: 为了方便管理，我把上面设置的域名改为了blog.wkcaeser.com，然后用www.wkcaeser.com作为腾讯云cdn的加速域名。其实主要原因是这里有坑，不知道GitHub版本原因还是啥导致，网上没发现有博客提到这个问题，那就是自定义域名是无法直接cname到GitHub的原始访问域名的，不在GitHub上配置cname的话（CNAME文件，这个文件的变动会和settings里面联动），采用双层cname的结构，是无法对GitHub pages进行加速访问的
-</strong>
-<br>
-
-<p><a target="_blank" rel="noopener" href="https://docs.github.com/cn/github/working-with-github-pages/troubleshooting-custom-domains-and-github-pages">官方文档地址</a><br><img src="https://cache.wkcaeser.com/uPic/bytXiw.png"/></p>
-<hr>
-<strong>
-下面我们来开始配置腾讯云CDN加速，因为我的域名是托管在腾讯云，用起来比较方便 
-</strong>
-<br>
-
-<ul>
-<li>第一步，配置CDN服务，域名需要和之前为博客自定义的域名不是同一个，目标域名就是之前之前在GitHub配置的自定义域名，按下图的方式填写，保存提交  </li>
-</ul>
-<img src="https://cache.wkcaeser.com/uPic/dhCwLZ.png"/>
-<img src="https://cache.wkcaeser.com/uPic/trczMQ.png"/>
-
-<ul>
-<li>第二步，回到cdn服务的列表页，会发现多了一条我们刚刚新增的cdn加速服务，正在部署中，同时CNAME处还是红色的，此时我们需要回到域名托管服务商处加一条CNAME记录，指向这个域名。  </li>
-</ul>
-<img src="https://cache.wkcaeser.com/uPic/thgRrB.png"/>
-
-<ul>
-<li>此时，我们回到cdn服务的列表页，可以看到新增的服务部署OK了，CNAME处的红色提示也没有了,cdn加速配置完成了一半，另一半就是给这个cdn加速配置证书让其能够HTTPS访问了，这个操作腾讯云上点几下就OK了。  </li>
-</ul>
-<img src="https://cache.wkcaeser.com/uPic/XE4XJP.png"/>
-<img src="https://cache.wkcaeser.com/uPic/ZYGsLF.png"/>
+<h2 id="绑定cdn加速"><a href="#绑定cdn加速" class="headerlink" title="绑定cdn加速"></a>绑定cdn加速</h2><p>emmmm，比较尴尬，反正目前我是没有操作成功，腾讯云和阿里云都试过了，cname过去以后直接就404了，提工单客服也没解释清楚原因，等找到原因以后再补充吧，现在我是直接把博客内容发布到了cdn上</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.wkcaeser.com/2021/02/27/%E6%90%AD%E5%BB%BAGitHub-pages%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8Dcdn%E5%8A%A0%E9%80%9F/" data-id="cklntk84q0000snxjcrpa3nna" data-title="搭建GitHub_pages博客并配置自定义域名cdn加速" class="article-share-link">Share</a>
+      <a data-url="https://www.wkcaeser.com/2021/02/27/%E6%90%AD%E5%BB%BAGitHub-pages%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8Dcdn%E5%8A%A0%E9%80%9F/" data-id="cklntvpgl00005gxjgxsd0o7v" data-title="搭建GitHub_pages博客并配置自定义域名cdn加速" class="article-share-link">Share</a>
       
       
       
