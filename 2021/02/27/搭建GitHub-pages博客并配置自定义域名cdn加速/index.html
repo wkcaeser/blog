@@ -24,9 +24,12 @@
 <meta property="og:image" content="https://cache.wkcaeser.com/uPic/kWSnAe.png">
 <meta property="og:image" content="https://cache.wkcaeser.com/uPic/B5ZzKs.png">
 <meta property="og:image" content="https://cache.wkcaeser.com/uPic/rpZgkM.png">
+<meta property="og:image" content="https://cache.wkcaeser.com/uPic/hrUbVT.png">
+<meta property="og:image" content="https://cache.wkcaeser.com/uPic/kZUttq.png">
 <meta property="article:published_time" content="2021-02-27T11:08:19.000Z">
-<meta property="article:modified_time" content="2021-02-27T14:36:43.999Z">
+<meta property="article:modified_time" content="2021-02-28T09:26:32.573Z">
 <meta property="article:author" content="wkCaeser">
+<meta property="article:tag" content="博客搭建">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cache.wkcaeser.com/uPic/VIPomK.png">
   
@@ -197,7 +200,21 @@
 <img src="https://cache.wkcaeser.com/uPic/rpZgkM.png"/>
 
 
-<h2 id="绑定cdn加速"><a href="#绑定cdn加速" class="headerlink" title="绑定cdn加速"></a>绑定cdn加速</h2><p>emmmm，比较尴尬，反正目前我是没有操作成功，腾讯云和阿里云都试过了，cname过去以后直接就404了，提工单客服也没解释清楚原因，等找到原因以后再补充吧，现在我是直接把博客内容发布到了cdn上</p>
+<h2 id="绑定cdn加速"><a href="#绑定cdn加速" class="headerlink" title="绑定cdn加速"></a>绑定cdn加速</h2><p>给GitHub pages绑定cdn加速其实各个服务上操作都差不多，主要是几个概念要理解清楚，这几个概念折腾请求了就很容易配了（mmp，当时我理解错了回源host的含义，主要是很多博客上也说得错的或者很含糊，折腾了一天，在各个云上都试了下提工单看文档才搞定）。</p>
+<ul>
+<li>加速域名：你访问时在浏览器里面输入的域名</li>
+<li>源站域名：你的服务放在哪个服务器上，那个服务器绑定的域名，cdn会解析到对应的ip，一般是个负载均衡的域名，能解析出多个ip，cdn会解析到对应ip</li>
+<li>回源host（回源域名）：回源请求访问哪个域名，上面说到了源站域名可能会解析出多个ip，而这些ip上可能又绑定的有多个域名，这个域名就决定了访问这个ip时的请求用什么域名去访问</li>
+</ul>
+<p>下面是我在企鹅云的配置：</p>
+<ul>
+<li>加速域名是<a href="http://www.wkcaeser.com/">www.wkcaeser.com</a> </li>
+<li>源站域名是我之前在GitHub pages配置的个人域名 blog.wkcaeser.com </li>
+<li>回源host是 blog.wkcaeser.com (这里如果在GitHub配置了个人域名一定要写个人域名，不然会有解析死循环的问题)，如果配置的时候GitHub pages提供的那个域名的话（比如我是 wkcaeser.github.io），还需要配置下url路径重写（因为实际访问地址是 wkcaeser.github.io/blog），和NGINX差不多 <img src="https://cache.wkcaeser.com/uPic/hrUbVT.png"/>
+
+</li>
+</ul>
+<p>另外，最好cdn回源配置里面的“回源跟随301/302配置”勾选上，不然有些基于GitHub pages的框架在访问时重定向可能会有问题（比如hexo）<br><img src="https://cache.wkcaeser.com/uPic/kZUttq.png"/></p>
 
       
     </div>
@@ -206,10 +223,26 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2021/02/28/%E5%9F%BA%E4%BA%8Ehexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          基于hexo构建博客
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -222,9 +255,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -241,6 +288,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/02/28/%E5%9F%BA%E4%BA%8Ehexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/">基于hexo构建博客</a>
+          </li>
         
           <li>
             <a href="/2021/02/27/%E6%90%AD%E5%BB%BAGitHub-pages%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8Dcdn%E5%8A%A0%E9%80%9F/">搭建GitHub_pages博客并配置自定义域名cdn加速</a>
