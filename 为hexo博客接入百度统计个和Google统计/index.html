@@ -72,7 +72,7 @@
 
   
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 <body>
   <div id="container">
@@ -138,7 +138,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="接入百度统计"><a href="#接入百度统计" class="headerlink" title="接入百度统计"></a>接入百度统计</h2><h3 id="开通百度统计账号"><a href="#开通百度统计账号" class="headerlink" title="开通百度统计账号"></a>开通百度统计账号</h3><p>在 <a target="_blank" rel="noopener" href="https://tongji.baidu.com/web/welcome/login">百度统计</a> 注册帐号(站长注册)。</p>
+        <h2 id="接入百度统计"><a href="#接入百度统计" class="headerlink" title="接入百度统计"></a>接入百度统计</h2><h3 id="开通百度统计账号"><a href="#开通百度统计账号" class="headerlink" title="开通百度统计账号"></a>开通百度统计账号</h3><p>在 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://tongji.baidu.com/web/welcome/login">百度统计</a> 注册帐号(站长注册)。</p>
 <p>在网站列表中加入自己的网站<br><img src="https://cache.wkcaeser.com/uPic/ke4spD.png"/></p>
 <h3 id="将百度统计代码植入博客"><a href="#将百度统计代码植入博客" class="headerlink" title="将百度统计代码植入博客"></a>将百度统计代码植入博客</h3><p>这里先使用next主题，首先next主题</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入到你的hexo博客目录下</span></span><br><span class="line">cd your-hexo-site</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 我这里是默认的landscape主题，其他主题也差不多的操作</span></span><br><span class="line">cd themes</span><br><span class="line"><span class="meta">#</span><span class="bash"> 下载lanscape主题</span></span><br><span class="line">git clone https://github.com/hexojs/hexo-theme-landscape.git</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建文件</span></span><br><span class="line">cd landscape</span><br><span class="line">touch layout/_partial/baidu_tongji.ejs</span><br></pre></td></tr></table></figure>
@@ -152,12 +152,12 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">baidu_tongji:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <p>配置好以后，重新发布博客就可以了，然后在百度统计页面进行代码安装检查就OK了。<br><img src="https://cache.wkcaeser.com/uPic/dDSv4V.png"></p>
-<h2 id="接入Google统计"><a href="#接入Google统计" class="headerlink" title="接入Google统计"></a>接入Google统计</h2><h3 id="开通Google分析账号"><a href="#开通Google分析账号" class="headerlink" title="开通Google分析账号"></a>开通Google分析账号</h3><p>在<a target="_blank" rel="noopener" href="https://marketingplatform.google.com/about/analytics/">Google分析</a> 注册账号</p>
+<h2 id="接入Google统计"><a href="#接入Google统计" class="headerlink" title="接入Google统计"></a>接入Google统计</h2><h3 id="开通Google分析账号"><a href="#开通Google分析账号" class="headerlink" title="开通Google分析账号"></a>开通Google分析账号</h3><p>在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://marketingplatform.google.com/about/analytics/">Google分析</a> 注册账号</p>
 <p>拿到GA ID<br><img src="https://cache.wkcaeser.com/uPic/H8wnQe.png"/></p>
 <p>landscape是已经集成了Google统计，所以只需要配置一下就行了<br>在主题的配置文件（themes/landscape/_config.yml）中加入以下配置：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">google_analytics:</span> <span class="string">*****</span></span><br></pre></td></tr></table></figure>
 <p>重新发布博客就OK了。</p>
-<h2 id="自动推送链接到百度搜索"><a href="#自动推送链接到百度搜索" class="headerlink" title="自动推送链接到百度搜索"></a>自动推送链接到百度搜索</h2><p>注册<a target="_blank" rel="noopener" href="https://ziyuan.baidu.com/">百度资源搜索账号</a></p>
+<h2 id="自动推送链接到百度搜索"><a href="#自动推送链接到百度搜索" class="headerlink" title="自动推送链接到百度搜索"></a>自动推送链接到百度搜索</h2><p>注册<a target="_blank" rel="noopener external nofollow noreferrer" href="https://ziyuan.baidu.com/">百度资源搜索账号</a></p>
 <p>提交自己的站点，按步骤操作就可以了<br><img src="https://cache.wkcaeser.com/uPic/I437BP.png"/></p>
 <p>站点提交完以后百度就会对博客进行爬取了。</p>
 <p>同时我们可以每次发布时自动推送新链接到百度。</p>
@@ -275,7 +275,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2021 wkCaeser<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
 
       
         <br>
