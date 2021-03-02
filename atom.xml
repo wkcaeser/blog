@@ -6,7 +6,7 @@
   <link href="https://www.wkcaeser.com/atom.xml" rel="self"/>
   
   <link href="https://www.wkcaeser.com/"/>
-  <updated>2021-03-01T14:28:07.127Z</updated>
+  <updated>2021-03-02T13:48:25.224Z</updated>
   <id>https://www.wkcaeser.com/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>为hexo引入访问量统计</title>
-    <link href="https://www.wkcaeser.com/%E4%B8%BAhexo%E5%BC%95%E5%85%A5%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1/"/>
-    <id>https://www.wkcaeser.com/%E4%B8%BAhexo%E5%BC%95%E5%85%A5%E8%AE%BF%E9%97%AE%E9%87%8F%E7%BB%9F%E8%AE%A1/</id>
+    <link href="https://www.wkcaeser.com/20210301/blog_init_4.html"/>
+    <id>https://www.wkcaeser.com/20210301/blog_init_4.html</id>
     <published>2021-03-01T14:27:13.000Z</published>
-    <updated>2021-03-01T14:28:07.127Z</updated>
+    <updated>2021-03-02T13:48:25.224Z</updated>
     
     
       
@@ -41,10 +41,10 @@
   
   <entry>
     <title>为hexo博客接入百度统计个和Google统计</title>
-    <link href="https://www.wkcaeser.com/%E4%B8%BAhexo%E5%8D%9A%E5%AE%A2%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1%E4%B8%AA%E5%92%8CGoogle%E7%BB%9F%E8%AE%A1/"/>
-    <id>https://www.wkcaeser.com/%E4%B8%BAhexo%E5%8D%9A%E5%AE%A2%E6%8E%A5%E5%85%A5%E7%99%BE%E5%BA%A6%E7%BB%9F%E8%AE%A1%E4%B8%AA%E5%92%8CGoogle%E7%BB%9F%E8%AE%A1/</id>
+    <link href="https://www.wkcaeser.com/20210228/blog_init_3.html"/>
+    <id>https://www.wkcaeser.com/20210228/blog_init_3.html</id>
     <published>2021-02-28T13:40:18.000Z</published>
-    <updated>2021-03-01T15:17:58.552Z</updated>
+    <updated>2021-03-02T13:48:19.889Z</updated>
     
     
       
@@ -64,10 +64,10 @@
   
   <entry>
     <title>基于hexo构建博客</title>
-    <link href="https://www.wkcaeser.com/%E5%9F%BA%E4%BA%8Ehexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://www.wkcaeser.com/%E5%9F%BA%E4%BA%8Ehexo%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</id>
+    <link href="https://www.wkcaeser.com/20210228/blog_init_2.html"/>
+    <id>https://www.wkcaeser.com/20210228/blog_init_2.html</id>
     <published>2021-02-28T09:27:15.000Z</published>
-    <updated>2021-02-28T09:27:34.757Z</updated>
+    <updated>2021-03-02T13:48:14.066Z</updated>
     
     
       
@@ -87,10 +87,10 @@
   
   <entry>
     <title>搭建GitHub_pages博客并配置自定义域名cdn加速</title>
-    <link href="https://www.wkcaeser.com/%E6%90%AD%E5%BB%BAGitHub-pages%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8Dcdn%E5%8A%A0%E9%80%9F/"/>
-    <id>https://www.wkcaeser.com/%E6%90%AD%E5%BB%BAGitHub-pages%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%85%8D%E7%BD%AE%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8Dcdn%E5%8A%A0%E9%80%9F/</id>
+    <link href="https://www.wkcaeser.com/20210227/blog_init_1.html"/>
+    <id>https://www.wkcaeser.com/20210227/blog_init_1.html</id>
     <published>2021-02-27T11:08:19.000Z</published>
-    <updated>2021-02-28T09:26:32.573Z</updated>
+    <updated>2021-03-02T13:48:03.423Z</updated>
     
     
       
