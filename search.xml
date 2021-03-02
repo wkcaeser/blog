@@ -8,13 +8,15 @@
       <link href="20210302/blog_init_5.html"/>
       <url>20210302/blog_init_5.html</url>
       
-        <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>exo 默认情况下，生成的HTML文件名是new post时输入的文件名，而在创建文章时，这个文件名输入相信很多人都是输入的中文，那么最终生成博客时，生成的文件也是中文文件命，这个对搜索引擎是比较不友好的，还一个点就是有些插件对url长度有限制，那么中文的文件名url经过url编码后会很长很长，无法使用。下面就来讲讲怎么修改这个url。</p><h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p>这个生成文件名的修改网上也有一些方案，比如自己写脚本来批量改相关内容，参考这片文章：<br><a href="https://www.jianshu.com/p/955f81c21543">修改Hexo自动生成的HTML文件名</a></p><p>也有一些现成的插件呀，参考下面这个文章，里面的GitHub连接点进去还有另一个插件：<br><a href="https://blog-website-building-guide.readthedocs.io/zh_CN/stable/source/hexo/advanced/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/">永久链接</a></p><p>不过吧，其实没那么麻烦，因为这个功能hexo本身已经提供了的。</p><p>hexo 根目录下的_config.yml里面有以下参数：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br></pre></td></tr></table></figure><p>这个其实就是指定了生成文章后的url的，接下来就讲下怎么改，首先看下面这个我的配置：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:year:month:day/:urlname.html</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line">  <span class="attr">urlname:</span> <span class="string">:title</span></span><br></pre></td></tr></table></figure><p>首先将url的层级减少，但是最好不要减完，减少是因为这样对于搜索引擎比较友好，不减完是为了让文章不至于全部在一个层级里面，这样会很难维护，我这里改成了只有两级。<br>这里可以应用的参数有以下这些默认的：<br><img src="https://cache.wkcaeser.com/uPic/doYGhz.png"/><br>但是有没有发现，上面我的配置里面有个urlname，这里里面并没有，这个参数就是自定义的一个参数，这里是允许我们自定义参数的，就在我们写博客的头部，如我的一个博客的头部内容是：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">基于hexo构建博客</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-02-28 17:27:15</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="attr">urlname:</span> <span class="string">blog_init_2</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure><p>那么对应的博客的uri就是/20210228/blog_init_2.html</p><p>这个文件头部模板是在博客的scaffold/post.md配置的，我们可以直接将这个自定义参数加在里面，这样每次新建文章的时候就会自动生成了</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> &#123;&#123; <span class="string">title</span> &#125;&#125;</span><br><span class="line"><span class="attr">date:</span> &#123;&#123; <span class="string">date</span> &#125;&#125;</span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="attr">urlname:</span> </span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>hexo 默认情况下，生成的HTML文件名是new post时输入的文件名，而在创建文章时，这个文件名输入相信很多人都是输入的中文，那么最终生成博客时，生成的文件也是中文文件命，这个对搜索引擎是比较不友好的，还一个点就是有些插件对url长度有限制，那么中文的文件名url经过url编码后会很长很长，无法使用。下面就来讲讲怎么修改这个url。</p><h2 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h2><p>这个生成文件名的修改网上也有一些方案，比如自己写脚本来批量改相关内容，参考这片文章：<br><a href="https://www.jianshu.com/p/955f81c21543">修改Hexo自动生成的HTML文件名</a></p><p>也有一些现成的插件呀，参考下面这个文章，里面的GitHub连接点进去还有另一个插件：<br><a href="https://blog-website-building-guide.readthedocs.io/zh_CN/stable/source/hexo/advanced/%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/">永久链接</a></p><p>不过吧，其实没那么麻烦，因为这个功能hexo本身已经提供了的。</p><p>hexo 根目录下的_config.yml里面有以下参数：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:year/:month/:day/:title/</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br></pre></td></tr></table></figure><p>这个其实就是指定了生成文章后的url的，接下来就讲下怎么改，首先看下面这个我的配置：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">:year:month:day/:urlname.html</span></span><br><span class="line"><span class="attr">permalink_defaults:</span></span><br><span class="line">  <span class="attr">urlname:</span> <span class="string">:title</span></span><br></pre></td></tr></table></figure><p>首先将url的层级减少，但是最好不要减完，减少是因为这样对于搜索引擎比较友好，不减完是为了让文章不至于全部在一个层级里面，这样会很难维护，我这里改成了只有两级。<br>这里可以应用的参数有以下这些默认的：<br><img src="https://cache.wkcaeser.com/uPic/doYGhz.png"/><br>但是有没有发现，上面我的配置里面有个urlname，这里里面并没有，这个参数就是自定义的一个参数，这里是允许我们自定义参数的，就在我们写博客的头部，如我的一个博客的头部内容是：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">基于hexo构建博客</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2021-02-28 17:27:15</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">博客搭建</span></span><br><span class="line"><span class="attr">urlname:</span> <span class="string">blog_init_2</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure><p>那么对应的博客的uri就是/20210228/blog_init_2.html</p><p>这个文件头部模板是在博客的scaffold/post.md配置的，我们可以直接将这个自定义参数加在里面，这样每次新建文章的时候就会自动生成了</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> &#123;&#123; <span class="string">title</span> &#125;&#125;</span><br><span class="line"><span class="attr">date:</span> &#123;&#123; <span class="string">date</span> &#125;&#125;</span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="attr">urlname:</span> </span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       
         <tags>
             
             <tag> 博客搭建 </tag>
+            
+            <tag> hexo </tag>
             
         </tags>
       
@@ -35,6 +37,8 @@
             
             <tag> 博客搭建 </tag>
             
+            <tag> hexo </tag>
+            
         </tags>
       
     </entry>
@@ -53,6 +57,8 @@
         <tags>
             
             <tag> 博客搭建 </tag>
+            
+            <tag> hexo </tag>
             
         </tags>
       
@@ -73,6 +79,8 @@
             
             <tag> 博客搭建 </tag>
             
+            <tag> hexo </tag>
+            
         </tags>
       
     </entry>
@@ -91,6 +99,8 @@
         <tags>
             
             <tag> 博客搭建 </tag>
+            
+            <tag> hexo </tag>
             
         </tags>
       
