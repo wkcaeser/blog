@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CY5B609BBE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CY5B609BBE');
+</script>
+<!-- End Google Analytics -->
+
+  
+  <!-- baidu_tongji -->
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ec36f79df1765ac22fe11d7e17f57b00";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+  </script>
+  <!-- End baidu_tongji -->
+  
+
+  <meta name="baidu-site-verification" content="code-YqFJ9cw7u5" />
+  <meta name="google-site-verification" content="KMb88XuvOqslIikjHSnm_kYa1o7kV_yG96P-a2FsDbs" />
+  
+  <title>bloginit/处理搜索引擎无法成功抓取博客的问题 | wkCaeser小天地</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="百度爬虫抓取诊断地址：https:&#x2F;&#x2F;ziyuan.baidu.com&#x2F;crawltools&#x2F;index 第一个坑：百度爬虫无法抓取GitHub pages内容百度和GitHub之前好像谈崩了，所以GitHub上的东西百度是无法抓取的，如果博客服务直接使用的GitHub pages，百度是无法抓取到的。 要解决这个问题，需要把博客放到百度爬虫可以抓取的服务上，比如各类S3服务直接提供静态网页服务，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bloginit&#x2F;处理搜索引擎无法成功抓取博客的问题">
+<meta property="og:url" content="https://www.wkcaeser.com/20210313/blog_init_6.html">
+<meta property="og:site_name" content="wkCaeser小天地">
+<meta property="og:description" content="百度爬虫抓取诊断地址：https:&#x2F;&#x2F;ziyuan.baidu.com&#x2F;crawltools&#x2F;index 第一个坑：百度爬虫无法抓取GitHub pages内容百度和GitHub之前好像谈崩了，所以GitHub上的东西百度是无法抓取的，如果博客服务直接使用的GitHub pages，百度是无法抓取到的。 要解决这个问题，需要把博客放到百度爬虫可以抓取的服务上，比如各类S3服务直接提供静态网页服务，">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-13T06:57:50.000Z">
+<meta property="article:modified_time" content="2021-03-13T06:58:47.670Z">
+<meta property="article:author" content="wkCaeser">
+<meta property="article:tag" content="博客搭建">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="wkCaeser小天地" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">wkCaeser小天地</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://www.wkcaeser.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-bloginit/处理搜索引擎无法成功抓取博客的问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/20210313/blog_init_6.html" class="article-date">
+  <time class="dt-published" datetime="2021-03-13T06:57:50.000Z" itemprop="datePublished">2021-03-13</time>
+</a>
+  
+    <!-- 不蒜子统计 -->
+    <span id="busuanzi_container_page_pv" style='display:none' class="article-date">
+      <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+    </span>
+    
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      bloginit/处理搜索引擎无法成功抓取博客的问题
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>百度爬虫抓取诊断地址：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://ziyuan.baidu.com/crawltools/index">https://ziyuan.baidu.com/crawltools/index</a></p>
+<h2 id="第一个坑：百度爬虫无法抓取GitHub-pages内容"><a href="#第一个坑：百度爬虫无法抓取GitHub-pages内容" class="headerlink" title="第一个坑：百度爬虫无法抓取GitHub pages内容"></a>第一个坑：百度爬虫无法抓取GitHub pages内容</h2><p>百度和GitHub之前好像谈崩了，所以GitHub上的东西百度是无法抓取的，如果博客服务直接使用的GitHub pages，百度是无法抓取到的。</p>
+<p>要解决这个问题，需要把博客放到百度爬虫可以抓取的服务上，比如各类S3服务直接提供静态网页服务，如腾讯云CO、，阿里云OSS，外部可以再挂载CDN；或者直接放在自己的服务器上。</p>
+<p>我采用的是直接放在自己的服务器上，然后外部挂载的腾讯云的CDN服务。</p>
+<h2 id="第二个坑：HTTPS认证无法通过"><a href="#第二个坑：HTTPS认证无法通过" class="headerlink" title="第二个坑：HTTPS认证无法通过"></a>第二个坑：HTTPS认证无法通过</h2><p>HTTPS认证能够增加在搜索引擎的权重，但是https认证的时候也遇到一个坑，明明我所有的链接都是https的了，但是却无法通过百度的https认证。</p>
+<p>这个坑的原因是，https认证必须保证http链接也是可以访问的，因为认证时是通过http访问来认证的。而我在挂载cdn的时候，强制所有的http请求直接重定向为https的访问了，所以始终无法通过，直接在服务器访问也是同样的问题。</p>
+<p>所以要想通过https的认证，需要保证网站http和https访问都是可以支持的，而且不能把http重定向为https。</p>
+<h2 id="第三个坑：百度爬虫无法成功抓取页面内容"><a href="#第三个坑：百度爬虫无法成功抓取页面内容" class="headerlink" title="第三个坑：百度爬虫无法成功抓取页面内容"></a>第三个坑：百度爬虫无法成功抓取页面内容</h2><p>爬虫在进行页面爬取时，会解析到最终服务器的ip去进行访问，所以最终直接访问服务器来请求实际页面内容来解析。</p>
+<p>我的博客是部署在我的服务器上的，然后外面挂载CDN，而CDN使用的域名和服务器的域名并不是同一个，所以最开始，在服务器上的NGINX并没有配置cdn使用的域名，所以当爬虫直接访问我的服务器时，并不能成功获取到页面内容，才开始并没有想到是这个原因，我把ip访问直接放回了博客内容，这样只解决了sitmap的上报问题，本身页面抓取的问题并没有解决。</p>
+<p>不过在我认证https之前，爬虫是可以成功抓取到页面内容的，基于此分析，https和http差别就是ssl证书，而ssl证书是和域名相关的，而百度抓取的域名是我cdn的域名，分析到这个点，实际抓取失败的原因也就大概猜出来了。</p>
+<p>解决方案就是在服务上的NGINX上配置上cdn的域名，因为是https的访问，所以还要将cdn的域名用的ssl证书也配置在NGINX上，配置完成后，再去进行百度爬虫诊断，发现可以成功抓取内容了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.wkcaeser.com/20210313/blog_init_6.html" data-id="ckm7dqel600058rxj9n0i6kj4" data-title="bloginit/处理搜索引擎无法成功抓取博客的问题" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/20210302/blog_init_5.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">修改hexo生成的html文件名</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="tag">博客搭建</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" style="font-size: 10px;">博客搭建</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">三月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">二月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/20210313/blog_init_6.html">bloginit/处理搜索引擎无法成功抓取博客的问题</a>
+          </li>
+        
+          <li>
+            <a href="/20210302/blog_init_5.html">修改hexo生成的html文件名</a>
+          </li>
+        
+          <li>
+            <a href="/20210301/blog_init_4.html">为hexo引入访问量统计</a>
+          </li>
+        
+          <li>
+            <a href="/20210228/blog_init_3.html">为hexo博客接入百度统计个和Google统计</a>
+          </li>
+        
+          <li>
+            <a href="/20210228/blog_init_2.html">基于hexo构建博客</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      鄂ICP备17018063号 &copy; 2021 wkCaeser<br>
+      Powered by <a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
+
+      
+        <br>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+          本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style='display:none'>
+          本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

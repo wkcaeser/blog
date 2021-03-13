@@ -6,7 +6,7 @@
   <link href="https://www.wkcaeser.com/atom.xml" rel="self"/>
   
   <link href="https://www.wkcaeser.com/"/>
-  <updated>2021-03-02T14:36:58.111Z</updated>
+  <updated>2021-03-13T06:58:47.670Z</updated>
   <id>https://www.wkcaeser.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bloginit/处理搜索引擎无法成功抓取博客的问题</title>
+    <link href="https://www.wkcaeser.com/20210313/blog_init_6.html"/>
+    <id>https://www.wkcaeser.com/20210313/blog_init_6.html</id>
+    <published>2021-03-13T06:57:50.000Z</published>
+    <updated>2021-03-13T06:58:47.670Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;百度爬虫抓取诊断地址：&lt;a href=&quot;https://ziyuan.baidu.com/crawltools/index&quot;&gt;https://ziyuan.baidu.com/crawltools/index&lt;/a&gt;&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="博客搭建" scheme="https://www.wkcaeser.com/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    <category term="hexo" scheme="https://www.wkcaeser.com/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>修改hexo生成的html文件名</title>
